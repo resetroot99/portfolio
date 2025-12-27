@@ -11,7 +11,7 @@ This portfolio documents research and development work focused on making AI syst
 
 ---
 
-## Core Projects
+## Core Research Projects
 
 ### 1. TECP (Trusted Ephemeral Computation Protocol)
 
@@ -27,7 +27,7 @@ This portfolio documents research and development work focused on making AI syst
 - Machine-readable privacy policies with runtime validation
 - Sub-10ms receipt generation, sub-5ms verification
 
-**Documentation:** [TECP.md](TECP.md)
+**Documentation:** [TECP.md](TECP.md) | [MOTIVATION.md](TECP-MOTIVATION.md)
 
 ---
 
@@ -49,7 +49,7 @@ This portfolio documents research and development work focused on making AI syst
 - Confidence scoring on all outputs
 - Meta-evaluation layer for test validation
 
-**Documentation:** [AI-LA.md](AI-LA.md)
+**Documentation:** [AI-LA.md](AI-LA.md) | [AUTONOMY_RESEARCH.md](AI-LA-AUTONOMY-RESEARCH.md)
 
 ---
 
@@ -70,6 +70,7 @@ This portfolio documents research and development work focused on making AI syst
 **Real-World Context:**
 Built after incumbent platform (CCC ONE) blocked integration of InvOCR automation tool. Response: Move to higher-value reasoning layer where platform becomes commodity.
 
+**Live Demo:** [crashcodex-presale.vercel.app](https://crashcodex-presale-ioms00bdp-sudosimianvercel.vercel.app)  
 **Documentation:** [CrashCodex.md](CrashCodex.md)
 
 ---
@@ -90,20 +91,62 @@ Built after incumbent platform (CCC ONE) blocked integration of InvOCR automatio
 **Background:**
 Developed during counter-extremism operations (2017), including offensive security work against extremist groups. Participated in 2017 White House CVE Summit and partnered with CIA on national security initiatives.
 
-**Documentation:** [RedTeam.md](RedTeam.md)
+**Documentation:** [RedTeam.md](RedTeam.md) | [ADVERSARIAL_THINKING.md](RedTeam-ADVERSARIAL-THINKING.md)
 
 ---
 
-## Additional Projects
+## Production Systems & Tools
+
+### EMSIQ - Estimate Management System Intelligence & Quality Assurance
+
+AI-powered quality assurance and intelligence layer for collision repair estimates. Provides real-time estimate analysis, DRP compliance validation, OEM procedure verification, and profit optimization recommendations.
+
+**Live System:** Deployed on Vercel  
+**Documentation:** [EMSIQ.md](EMSIQ.md)
+
+---
+
+### InvOCR - AI-Powered Invoice Processing
+
+Autonomous agent system for collision repair shops that ingests invoices via email, SMS, and chat platforms, automatically extracting line items for posting to estimating systems. Successfully deployed before CCC ONE blocked third-party integration, leading to development of CrashCodex.
+
+**Key Learning:** Incumbent platforms will block innovations that threaten control. Strategic response: Move to reasoning layer where platform becomes commodity.
+
+**Documentation:** [InvOCR.md](InvOCR.md)
+
+---
+
+### V3ctor VPN - Enterprise-Grade VPN Solution
+
+Comprehensive VPN platform with zero-knowledge architecture, multi-protocol support (WireGuard, OpenVPN, IKEv2), and advanced security features. Global server network with military-grade encryption and perfect forward secrecy.
+
+**Public Releases:** [v3ctor-vpn-releases](https://github.com/resetroot99/v3ctor-vpn-releases)  
+**Live Portal:** Deployed on Vercel  
+**Documentation:** [V3ctor-VPN.md](V3ctor-VPN.md)
+
+---
+
+### KaiSight - AI-Powered Analytics Platform
+
+Intelligent analytics platform that transforms raw data into actionable insights using advanced AI reasoning. Combines data analysis, pattern recognition, and natural language generation for comprehensive business intelligence.
+
+**Documentation:** [KaiSight.md](KaiSight.md)
+
+---
+
+### Context-Key - Cryptographic Key Management
+
+Context-aware authentication system with dynamic key generation and validation based on environmental context, user behavior, and risk assessment. Implements automatic key rotation when context changes significantly.
+
+**Documentation:** [Context-Key.md](Context-Key.md)
+
+---
 
 ### AI-LA Framework (WordPress)
-WordPress integration framework for AI-LA autonomous development system.
 
-### Context-Key
-Cryptographic key management system for context-aware authentication.
+WordPress integration framework for AI-LA autonomous development system. Enables natural language-driven WordPress development including theme generation, plugin creation, and content management automation.
 
-### KaiSight
-AI-powered analytics and insight generation platform.
+**Documentation:** [AI-LA-Framework-WP.md](AI-LA-Framework-WP.md)
 
 ---
 
@@ -116,7 +159,7 @@ AI-powered analytics and insight generation platform.
 **Red Team Toolkit** principles inform defensive design across all projects. Systems must assume attack and stress beyond design limits.
 
 ### Explainable Reasoning
-**CrashCodex** shows that high-stakes AI must surface uncertainty and cite sources. "The AI said so" is not a defense.
+**CrashCodex** and **EMSIQ** show that high-stakes AI must surface uncertainty and cite sources. "The AI said so" is not a defense.
 
 ### Autonomous Accountability
 **AI-LA** proves that accountability doesn't emerge naturally—it must be designed into autonomous systems from the start.
@@ -125,11 +168,12 @@ AI-powered analytics and insight generation platform.
 
 ## Technical Stack
 
-**Languages:** Python, TypeScript, Go  
+**Languages:** Python, TypeScript, Go, PHP  
 **AI/ML:** OpenAI embeddings, RAG systems, LLM reasoning chains  
 **Cryptography:** Ed25519 signatures, SHA-256 hashing, Merkle trees  
 **Infrastructure:** Docker, Fly.io, Render, Vercel, Netlify  
-**Databases:** MySQL, TiDB, Supabase, Pinecone (vector DB)
+**Databases:** MySQL, TiDB, Supabase, Pinecone (vector DB)  
+**Frameworks:** React, Next.js, FastAPI, Flask, WordPress
 
 ---
 
@@ -153,10 +197,19 @@ All implementation code is maintained in private repositories. For access to spe
 
 This is a documentation-only repository. Implementation code is maintained in private repositories.
 
+**Core Research:**
 - [TECP.md](TECP.md) - Trusted Ephemeral Computation Protocol
 - [AI-LA.md](AI-LA.md) - AI Learning Agent & Autonomy Research
 - [CrashCodex.md](CrashCodex.md) - Collision Repair RAG System
 - [RedTeam.md](RedTeam.md) - Adversarial Systems Thinking
+
+**Production Systems:**
+- [EMSIQ.md](EMSIQ.md) - Estimate Quality Assurance Intelligence
+- [InvOCR.md](InvOCR.md) - Invoice Processing Automation
+- [V3ctor-VPN.md](V3ctor-VPN.md) - Enterprise VPN Platform
+- [KaiSight.md](KaiSight.md) - AI Analytics Platform
+- [Context-Key.md](Context-Key.md) - Cryptographic Key Management
+- [AI-LA-Framework-WP.md](AI-LA-Framework-WP.md) - WordPress Integration
 
 ---
 
