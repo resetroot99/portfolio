@@ -11,7 +11,7 @@ This portfolio documents research and development work focused on making AI syst
 
 ---
 
-## Projects
+## Core Projects
 
 ### 1. TECP (Trusted Ephemeral Computation Protocol)
 
@@ -94,6 +94,19 @@ Developed during counter-extremism operations (2017), including offensive securi
 
 ---
 
+## Additional Projects
+
+### AI-LA Framework (WordPress)
+WordPress integration framework for AI-LA autonomous development system.
+
+### Context-Key
+Cryptographic key management system for context-aware authentication.
+
+### KaiSight
+AI-powered analytics and insight generation platform.
+
+---
+
 ## Cross-Cutting Themes
 
 ### Cryptographic Accountability
@@ -120,11 +133,19 @@ Developed during counter-extremism operations (2017), including offensive securi
 
 ---
 
-## Contact
+## Access to Private Repositories
 
-**Ali Jakvani**  
-Email: ali@thecrashcompany.com  
-Website: https://crashcodex.io
+All implementation code is maintained in private repositories. For access to specific projects, please contact:
+
+**Email:** ali@jakvan.io
+
+---
+
+## Public Utility Repositories
+
+- **v3ctor-vpn-releases** - Public VPN client installers (DMG/PKG)
+- **textbot** - OpenAI + Twilio integration demo
+- **mac-dev-setup** - macOS development environment setup scripts
 
 ---
 
@@ -136,6 +157,14 @@ This is a documentation-only repository. Implementation code is maintained in pr
 - [AI-LA.md](AI-LA.md) - AI Learning Agent & Autonomy Research
 - [CrashCodex.md](CrashCodex.md) - Collision Repair RAG System
 - [RedTeam.md](RedTeam.md) - Adversarial Systems Thinking
+
+---
+
+## Contact
+
+**Ali Jakvani**  
+Email: ali@jakvan.io  
+Website: https://crashcodex.io
 
 ---
 
