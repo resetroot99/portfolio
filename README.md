@@ -74,7 +74,7 @@ This portfolio documents research and development work focused on making AI syst
 **Real-World Context:**
 Built after incumbent platform (CCC ONE) blocked integration of InvOCR automation tool. Response: Move to higher-value reasoning layer where platform becomes commodity.
 
-**Live Demo:** [crashcodex-presale.vercel.app](https://crashcodex-presale-ioms00bdp-sudosimianvercel.vercel.app)  
+**Live Platform:** [crashcodex.io](https://crashcodex.io)  
 **Documentation:** [CrashCodex.md](CrashCodex.md)
 
 ---
@@ -142,7 +142,7 @@ Autonomous agent system for collision repair shops that ingests invoices via ema
 
 AI-powered quality assurance and intelligence layer for collision repair estimates. Provides real-time estimate analysis, DRP compliance validation, OEM procedure verification, and profit optimization recommendations with explainable AI and citations.
 
-**Live System:** Deployed on Vercel  
+**Status:** Production deployment  
 **Documentation:** [EMSIQ.md](EMSIQ.md)
 
 ---
@@ -152,7 +152,7 @@ AI-powered quality assurance and intelligence layer for collision repair estimat
 Comprehensive VPN platform with zero-knowledge architecture, multi-protocol support (WireGuard, OpenVPN, IKEv2), and advanced security features. Global server network with military-grade encryption and perfect forward secrecy.
 
 **Public Releases:** [v3ctor-vpn-releases](https://github.com/resetroot99/v3ctor-vpn-releases)  
-**Live Portal:** Deployed on Vercel  
+**Status:** Production deployment  
 **Documentation:** [V3ctor-VPN.md](V3ctor-VPN.md)
 
 ---
@@ -222,7 +222,7 @@ WordPress integration framework for AI-LA autonomous development system. Enables
 - [24zero.cloud](https://24zero.cloud) - Continuous compliance platform
 - [crashman.xyz](https://www.crashman.xyz/) - Collision repair analytics
 - [invocr.io](https://invocr.io) - Invoice processing automation
-- [crashcodex-presale.vercel.app](https://crashcodex-presale-ioms00bdp-sudosimianvercel.vercel.app) - RAG reasoning demo
+- [crashcodex.io](https://crashcodex.io) - RAG reasoning engine
 
 ---
 

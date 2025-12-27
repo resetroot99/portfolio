@@ -1,5 +1,7 @@
 # CrashCodex: Technical Overview
 
+**Live Platform:** [crashcodex.io](https://crashcodex.io)
+
 ## The Problem
 
 Collision repair estimates are not calculations—they are arguments. An estimator must synthesize information from multiple contradictory sources:
@@ -105,6 +107,8 @@ Uncertainty is **surfaced, not hidden**. Contradictions are **flagged for human 
 
 ## Current Status
 
+**Live Platform:** [crashcodex.io](https://crashcodex.io)
+
 - **Vector corpus:** 22,913+ vectors from real estimates
 - **Stack:** Next.js + Supabase + Pinecone + OpenAI embeddings
 - **Founding partner program:** Launching Q1 2025 (10 spots per tier)
@@ -152,3 +156,7 @@ Uncertainty is **surfaced, not hidden**. Contradictions are **flagged for human 
 ---
 
 CrashCodex is not just a product. It is a case study in building AI systems that operate in regulated, high-stakes environments where correctness, explainability, and trust are non-negotiable.
+
+---
+
+**Part of the AI Systems Research & Development Portfolio**
