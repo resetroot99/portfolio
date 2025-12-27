@@ -26,7 +26,9 @@ This portfolio documents research and development work focused on making AI syst
 - Public Merkle tree transparency ledger
 - Machine-readable privacy policies with runtime validation
 - Sub-10ms receipt generation, sub-5ms verification
+- Enterprise Gateway for zero-code AI compliance
 
+**Live Platform:** [tecp.dev](https://tecp.dev)  
 **Documentation:** [TECP.md](TECP.md) | [MOTIVATION.md](TECP-MOTIVATION.md)
 
 ---
@@ -48,7 +50,9 @@ This portfolio documents research and development work focused on making AI syst
 - Decision logging and reasoning traces
 - Confidence scoring on all outputs
 - Meta-evaluation layer for test validation
+- Closed-loop autonomous development framework
 
+**Live Platform:** [aiuinifiedframework.xyz](https://aiuinifiedframework.xyz/)  
 **Documentation:** [AI-LA.md](AI-LA.md) | [AUTONOMY_RESEARCH.md](AI-LA-AUTONOMY-RESEARCH.md)
 
 ---
@@ -88,31 +92,58 @@ Built after incumbent platform (CCC ONE) blocked integration of InvOCR automatio
 4. **Defense in Depth** - Multiple layers, assume inner layers breach
 5. **Observability Is Security** - Cannot defend what you cannot see
 
+**Technical Highlights:**
+- 25+ major attack categories
+- 150+ security tools
+- AI/ML exploitation capabilities
+- Zero-click exploits and quantum computing attacks
+- Autonomous AI worms and blockchain exploitation
+
 **Background:**
 Developed during counter-extremism operations (2017), including offensive security work against extremist groups. Participated in 2017 White House CVE Summit and partnered with CIA on national security initiatives.
 
+**Live Platform:** [509938.xyz](https://509938.xyz)  
 **Documentation:** [RedTeam.md](RedTeam.md) | [ADVERSARIAL_THINKING.md](RedTeam-ADVERSARIAL-THINKING.md)
 
 ---
 
 ## Production Systems & Tools
 
-### EMSIQ - Estimate Management System Intelligence & Quality Assurance
+### 24zero - Continuous Cyber Risk Management
 
-AI-powered quality assurance and intelligence layer for collision repair estimates. Provides real-time estimate analysis, DRP compliance validation, OEM procedure verification, and profit optimization recommendations.
+Continuous compliance platform that transforms security from yearly audits into real-time validation. Supports seven compliance frameworks (SOC 2, ISO 27001, NIST CSF, GDPR, HIPAA, PCI DSS, CIS Controls) with AI Red Team validation using 15+ automated attack scenarios. Provides automated control testing, cryptographically signed evidence collection, and real-time monitoring across entire infrastructures.
 
-**Live System:** Deployed on Vercel  
-**Documentation:** [EMSIQ.md](EMSIQ.md)
+**Live Platform:** [24zero.cloud](https://24zero.cloud)  
+**Documentation:** [24zero.md](24zero.md)
+
+---
+
+### CrashDash - Collision Repair Analytics
+
+Profit per job analyzer for collision repair shops. Provides detailed line-item costing analysis with CCC ONE integration, performance analytics tracking KPIs and estimator effectiveness, and real-time dashboards for shop management. Enables data-driven decisions about DRP participation, pricing strategies, and operational improvements.
+
+**Live Platform:** [crashman.xyz](https://www.crashman.xyz/)  
+**Documentation:** [CrashDash.md](CrashDash.md)
 
 ---
 
 ### InvOCR - AI-Powered Invoice Processing
 
-Autonomous agent system for collision repair shops that ingests invoices via email, SMS, and chat platforms, automatically extracting line items for posting to estimating systems. Successfully deployed before CCC ONE blocked third-party integration, leading to development of CrashCodex.
+Autonomous agent system for collision repair shops that ingests invoices via email, SMS, and chat platforms, automatically extracting line items for posting to estimating systems. Successfully deployed before CCC ONE blocked third-party integration, leading to development of CrashCodex. Saves 8-15 minutes per invoice with 60-83% margin boost and $3K+ monthly recovery.
+
+**Live Platform:** [invocr.io](https://invocr.io)  
+**Documentation:** [InvOCR.md](InvOCR.md)
 
 **Key Learning:** Incumbent platforms will block innovations that threaten control. Strategic response: Move to reasoning layer where platform becomes commodity.
 
-**Documentation:** [InvOCR.md](InvOCR.md)
+---
+
+### EMSIQ - Estimate Management System Intelligence
+
+AI-powered quality assurance and intelligence layer for collision repair estimates. Provides real-time estimate analysis, DRP compliance validation, OEM procedure verification, and profit optimization recommendations with explainable AI and citations.
+
+**Live System:** Deployed on Vercel  
+**Documentation:** [EMSIQ.md](EMSIQ.md)
 
 ---
 
@@ -153,27 +184,45 @@ WordPress integration framework for AI-LA autonomous development system. Enables
 ## Cross-Cutting Themes
 
 ### Cryptographic Accountability
-**TECP** demonstrates that trust boundaries can be enforced mathematically. Privacy violations become detectable, not just prohibited.
+**TECP** demonstrates that trust boundaries can be enforced mathematically. Privacy violations become detectable, not just prohibited. **Context-Key** extends this to authentication with dynamic key management.
 
 ### Adversarial Robustness
-**Red Team Toolkit** principles inform defensive design across all projects. Systems must assume attack and stress beyond design limits.
+**Red Team Toolkit** and **24zero** show that security requires continuous validation against real attacks. Systems must assume adversarial input and stress beyond design limits.
 
 ### Explainable Reasoning
-**CrashCodex** and **EMSIQ** show that high-stakes AI must surface uncertainty and cite sources. "The AI said so" is not a defense.
+**CrashCodex** and **EMSIQ** demonstrate that high-stakes AI must surface uncertainty and cite sources. "The AI said so" is not a defense in regulated environments.
 
 ### Autonomous Accountability
-**AI-LA** proves that accountability doesn't emerge naturally—it must be designed into autonomous systems from the start.
+**AI-LA** proves that accountability doesn't emerge naturally—it must be designed into autonomous systems from the start through decision logging, reasoning traces, and confidence scoring.
+
+### Production Intelligence Layers
+**InvOCR**, **CrashDash**, and **EMSIQ** show how to build value above commodity platforms. When incumbents block integration, move to reasoning layers they cannot control.
 
 ---
 
 ## Technical Stack
 
 **Languages:** Python, TypeScript, Go, PHP  
-**AI/ML:** OpenAI embeddings, RAG systems, LLM reasoning chains  
-**Cryptography:** Ed25519 signatures, SHA-256 hashing, Merkle trees  
+**AI/ML:** OpenAI embeddings, RAG systems, LLM reasoning chains, GPT-4 Vision  
+**Cryptography:** Ed25519 signatures, SHA-256 hashing, Merkle trees, CBOR encoding  
 **Infrastructure:** Docker, Fly.io, Render, Vercel, Netlify  
-**Databases:** MySQL, TiDB, Supabase, Pinecone (vector DB)  
-**Frameworks:** React, Next.js, FastAPI, Flask, WordPress
+**Databases:** MySQL, TiDB, Supabase, Pinecone (vector DB), SQLite  
+**Frameworks:** React, Next.js, FastAPI, Flask, WordPress, Expo
+
+---
+
+## Live Platforms Summary
+
+**Core Research:**
+- [tecp.dev](https://tecp.dev) - Cryptographic privacy protocol
+- [aiuinifiedframework.xyz](https://aiuinifiedframework.xyz/) - Autonomous AI framework
+- [509938.xyz](https://509938.xyz) - Red Team security toolkit
+
+**Production Systems:**
+- [24zero.cloud](https://24zero.cloud) - Continuous compliance platform
+- [crashman.xyz](https://www.crashman.xyz/) - Collision repair analytics
+- [invocr.io](https://invocr.io) - Invoice processing automation
+- [crashcodex-presale.vercel.app](https://crashcodex-presale-ioms00bdp-sudosimianvercel.vercel.app) - RAG reasoning demo
 
 ---
 
@@ -204,6 +253,8 @@ This is a documentation-only repository. Implementation code is maintained in pr
 - [RedTeam.md](RedTeam.md) - Adversarial Systems Thinking
 
 **Production Systems:**
+- [24zero.md](24zero.md) - Continuous Compliance Platform
+- [CrashDash.md](CrashDash.md) - Collision Repair Analytics
 - [EMSIQ.md](EMSIQ.md) - Estimate Quality Assurance Intelligence
 - [InvOCR.md](InvOCR.md) - Invoice Processing Automation
 - [V3ctor-VPN.md](V3ctor-VPN.md) - Enterprise VPN Platform
