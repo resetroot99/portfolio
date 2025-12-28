@@ -61,8 +61,10 @@ CrashCodex has two evaluation layers:
 | Corpus Size | 28,556 embedded records (vectors) |
 
 **Definitions:**
-- **Precision@5**: percent of labeled queries where at least one relevant evidence chunk appears in the top 5 retrieved results.
-- **End-to-end latency**: full pipeline time (retrieve -> reason/generate -> validate), measured in internal end-to-end runs.
+- **Precision@K**: percent of labeled queries where at least one relevant evidence chunk appears in the top K retrieved results.
+- **MRR**: mean reciprocal rank of the first relevant evidence chunk.
+- **Abstention rate**: percent of cases the system refuses; "correct refusals" are labeled insufficient-evidence cases.
+- **End-to-end latency**: full pipeline time (retrieve -> reason/generate -> validate), measured in internal end-to-end runs (hardware/env noted in eval logs).
 
 ---
 
@@ -79,7 +81,7 @@ npm run eval
   CRASHCODEX COMPLIANCE REGRESSION SUITE
 ======================================================================
 
-Corpus Size:        28,556 vectors
+Corpus Size:        28,556 embedded records (vectors)
 Regression Tests:   6
 
 ----------------------------------------------------------------------
@@ -97,7 +99,7 @@ Running tests...
 RESULTS SUMMARY
 
   Pass Rate:   6/6 (100.0%)
-  Corpus:      28,556 vectors
+  Corpus:      28,556 embedded records (vectors)
 ```
 
 ---
@@ -116,18 +118,18 @@ npm run eval:scenarios
 ======================================================================
 
 Scenario Suite:     lib/ragEvaluationSystem.ts
-Total Scenarios:    50
-Corpus Size:        28,556 vectors
+Total Scenarios:    50+
+Corpus Size:        28,556 embedded records (vectors)
 
 ----------------------------------------------------------------------
 RETRIEVAL METRICS (from internal runs)
 
   | Metric                  | Value                      |
   |-------------------------|----------------------------|
-  | Precision@5             | 87%                        |
-  | Precision@10            | 92%                        |
-  | Mean Reciprocal Rank    | 0.83                       |
-  | Abstention Rate         | 12% (correct refusals)     |
+  | Precision@5             | ~87%                       |
+  | Precision@10            | ~92%                       |
+  | Mean Reciprocal Rank    | ~0.83                      |
+  | Abstention Rate         | ~12% (correct refusals)    |
 
 ======================================================================
   END-TO-END LATENCY
@@ -138,6 +140,8 @@ RETRIEVAL METRICS (from internal runs)
   Improvement:          76%
 
   Pipeline: retrieve -> reason/generate -> validate
+
+  All metrics from internal runs (hardware/env noted in eval logs).
 ```
 
 ---
