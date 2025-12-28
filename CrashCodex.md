@@ -119,10 +119,13 @@ Uncertainty is **surfaced, not hidden**. Contradictions are **flagged for human 
 
 | Metric | Value |
 |--------|-------|
-| Corpus Size | 28,556 vectors |
-| Eval Cases | 6 regression tests |
-| Pass Rate | 100% |
-| Compliance Behaviors | Blocks on missing ADAS calibration |
+| Corpus Size | 28,556 embedded vectors |
+| Regression Tests | 6 (100% pass rate) |
+| Scenario Eval Cases | 50+ |
+| Precision@5 | ~87% |
+| End-to-End Latency | ~180ms avg |
+
+**Compliance behavior:** Blocks estimates when OEM calibration is missing.
 
 ---
 
