@@ -68,7 +68,8 @@ This portfolio documents research and development work focused on making AI syst
 **Technical Highlights:**
 - 28,556 vector corpus from real collision estimates
 - 50+ scenario eval cases, Precision@5 ~87% ([eval metrics](CrashCodex-EVAL.md))
-- End-to-end latency ~180ms avg (retrieve -> reason -> validate)
+- End-to-end latency ~750ms -> ~180ms avg (retrieve -> reason/generate -> validate)
+- 6 compliance regression tests, 100% pass rate
 - Retrieval-augmented reasoning with confidence scoring
 - Explicit uncertainty surfacing for conflicting guidance
 - Every recommendation includes citations with page numbers

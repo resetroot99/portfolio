@@ -119,13 +119,13 @@ Uncertainty is **surfaced, not hidden**. Contradictions are **flagged for human 
 
 | Metric | Value |
 |--------|-------|
-| Corpus Size | 28,556 embedded vectors |
+| Corpus Size | 28,556 embedded records (vectors) |
 | Regression Tests | 6 (100% pass rate) |
 | Scenario Eval Cases | 50+ |
-| Precision@5 | ~87% |
-| End-to-End Latency | ~180ms avg |
+| Precision@5 | ~87% (internal search tests) |
+| End-to-End Latency | ~750ms -> ~180ms avg |
 
-**Compliance behavior:** Blocks estimates when OEM calibration is missing.
+**Compliance behavior:** Blocks estimates when OEM calibration is missing. See [evaluation documentation](CrashCodex-EVAL.md) for runnable tests.
 
 ---
 
