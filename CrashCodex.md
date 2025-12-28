@@ -41,7 +41,7 @@ This is a **retrieval-augmented reasoning problem**, not a database problem.
 - **JSON normalization:** Parts catalogs, pricing data
 - **Metadata extraction:** Vehicle VIN, damage location, repair facility, insurance carrier
 
-### 2. Vector Corpus (22,913+ vectors)
+### 2. Vector Corpus (28,556 vectors)
 Built from real-world data:
 - Anonymized collision estimates (real repair scenarios)
 - DRP rules by carrier (Geico, State Farm, Progressive, etc.)
@@ -109,10 +109,20 @@ Uncertainty is **surfaced, not hidden**. Contradictions are **flagged for human 
 
 **Live Platform:** [crashcodex.io](https://crashcodex.io)
 
-- **Vector corpus:** 22,913+ vectors from real estimates
+- **Vector corpus:** 28,556 vectors from real estimates
+- **Eval suite:** 6 regression tests, 100% pass rate ([view eval metrics](CrashCodex-EVAL.md))
 - **Stack:** Next.js + Supabase + Pinecone + OpenAI embeddings
 - **Founding partner program:** Launching Q1 2025 (10 spots per tier)
 - **Integration:** CCC Secure Share API (read-only, no permission needed)
+
+### Key Metrics
+
+| Metric | Value |
+|--------|-------|
+| Corpus Size | 28,556 vectors |
+| Eval Cases | 6 regression tests |
+| Pass Rate | 100% |
+| Compliance Behaviors | Blocks on missing ADAS calibration |
 
 ---
 

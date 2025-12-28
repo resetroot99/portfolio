@@ -66,7 +66,8 @@ This portfolio documents research and development work focused on making AI syst
 **Key Insight:** An estimate is a defensible argument, not a spreadsheet. The bottleneck is reasoning, not data access.
 
 **Technical Highlights:**
-- 22,913+ vector corpus from real collision estimates
+- 28,556 vector corpus from real collision estimates
+- 6 regression tests, 100% pass rate ([eval metrics](CrashCodex-EVAL.md))
 - Retrieval-augmented reasoning with confidence scoring
 - Explicit uncertainty surfacing for conflicting guidance
 - Every recommendation includes citations with page numbers
