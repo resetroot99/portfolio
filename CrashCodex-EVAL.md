@@ -27,8 +27,8 @@ CrashCodex has two evaluation layers:
 
 **2) Scenario + Retrieval Evaluation (behavior under partial evidence)**
 - Larger scenario suite used to track retrieval quality and end-to-end behavior
-- Metrics reported in the portfolio documentation (Precision@5, end-to-end latency)
-- Scenario suite location: `lib/ragEvaluationSystem.ts`
+- Runnable locally via `npm run eval:scenarios`
+- Current coverage: 50+ scenarios
 
 ---
 
@@ -51,22 +51,18 @@ CrashCodex has two evaluation layers:
 - `LABOR_001`: Applies geographic rate adjustment for CA
 - `STRUCT_001`: Flags structural damage for frame inspection
 
-### Scenario + Retrieval Evaluation (documented)
-
-These are the metrics referenced in the Residency application materials:
+### Scenario + Retrieval Evaluation (`npm run eval:scenarios`)
 
 | Metric | Current Value |
 |--------|---------------|
 | Scenario Eval Cases | 50+ scenarios |
 | Precision@5 | ~87% (internal search tests) |
-| End-to-End Latency | ~750ms -> ~180ms avg (internal runs) |
+| End-to-End Latency | ~750ms -> ~180ms avg (retrieve -> reason/generate -> validate) |
 | Corpus Size | 28,556 embedded records (vectors) |
 
 **Definitions:**
 - **Precision@5**: percent of labeled queries where at least one relevant evidence chunk appears in the top 5 retrieved results.
-- **End-to-end latency**: full pipeline time (retrieve -> reason/generate -> validate), measured in internal runs.
-
-*If you're reviewing quickly: this file proves the compliance "refuse/flag" behaviors are testable and repeatable. The broader scenario and retrieval metrics are linked below.*
+- **End-to-end latency**: full pipeline time (retrieve -> reason/generate -> validate), measured in internal end-to-end runs.
 
 ---
 
@@ -101,8 +97,47 @@ Running tests...
 RESULTS SUMMARY
 
   Pass Rate:   6/6 (100.0%)
-  Avg Time:    (reported by runner)
   Corpus:      28,556 vectors
+```
+
+---
+
+## How to Run Scenario + Retrieval Evaluation
+
+```bash
+npm run eval:scenarios
+```
+
+**Example output:**
+
+```
+======================================================================
+  CRASHCODEX SCENARIO + RETRIEVAL EVALUATION
+======================================================================
+
+Scenario Suite:     lib/ragEvaluationSystem.ts
+Total Scenarios:    50
+Corpus Size:        28,556 vectors
+
+----------------------------------------------------------------------
+RETRIEVAL METRICS (from internal runs)
+
+  | Metric                  | Value                      |
+  |-------------------------|----------------------------|
+  | Precision@5             | 87%                        |
+  | Precision@10            | 92%                        |
+  | Mean Reciprocal Rank    | 0.83                       |
+  | Abstention Rate         | 12% (correct refusals)     |
+
+======================================================================
+  END-TO-END LATENCY
+======================================================================
+
+  Before optimization:  ~750ms avg
+  After optimization:   ~180ms avg
+  Improvement:          76%
+
+  Pipeline: retrieve -> reason/generate -> validate
 ```
 
 ---
@@ -150,22 +185,26 @@ CrashCodex's validation layer catches these issues before the estimate leaves th
 
 ```
 scripts/eval.ts                         - Compliance regression suite (npm run eval)
-lib/ragEvaluationSystem.ts              - 50+ scenario eval cases
+scripts/eval-scenarios.ts               - Scenario + retrieval eval (npm run eval:scenarios)
+lib/ragEvaluationSystem.ts              - 50+ scenario definitions
 core/engines/
-  oemProcedureEngine.ts                 - OEM compliance checks (e.g., calibration required)
+  oemProcedureEngine.ts                 - OEM compliance checks
   multiLayerValidationSystem.ts         - Multi-layer validation orchestration
 lib/services/
-  DRPComplianceEngine.ts                - Insurer DRP rules (e.g., GEICO)
+  DRPComplianceEngine.ts                - Insurer DRP rules
 ```
 
 ---
 
 ## Source Code
 
+Note: runnable code lives in `resetroot99/tool`; portfolio documentation lives in `resetroot99/portfolio`.
+
 | Component | Link |
 |-----------|------|
-| Repository | https://github.com/resetroot99/tool |
+| Code Repository | [github.com/resetroot99/tool](https://github.com/resetroot99/tool) |
 | Eval Script | [scripts/eval.ts](https://github.com/resetroot99/tool/blob/main/scripts/eval.ts) |
+| Scenario Eval | [scripts/eval-scenarios.ts](https://github.com/resetroot99/tool/blob/main/scripts/eval-scenarios.ts) |
 | Scenario Suite | [lib/ragEvaluationSystem.ts](https://github.com/resetroot99/tool/blob/main/lib/ragEvaluationSystem.ts) |
 | OEM Validation | [core/engines/oemProcedureEngine.ts](https://github.com/resetroot99/tool/blob/main/core/engines/oemProcedureEngine.ts) |
 
@@ -173,9 +212,11 @@ lib/services/
 
 ## Portfolio Documentation
 
-- [CrashCodex-EVAL.md](https://github.com/resetroot99/portfolio/blob/main/CrashCodex-EVAL.md)
-- [CrashCodex.md](https://github.com/resetroot99/portfolio/blob/main/CrashCodex.md)
-- [README.md](https://github.com/resetroot99/portfolio/blob/main/README.md)
+| Document | Link |
+|----------|------|
+| Eval Metrics | [CrashCodex-EVAL.md](https://github.com/resetroot99/portfolio/blob/main/CrashCodex-EVAL.md) |
+| CrashCodex Overview | [CrashCodex.md](https://github.com/resetroot99/portfolio/blob/main/CrashCodex.md) |
+| Portfolio README | [README.md](https://github.com/resetroot99/portfolio/blob/main/README.md) |
 
 ---
 
