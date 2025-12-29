@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Counterfactual Replay Schema",
+  "description": "Schema for counterfactual analysis of decisions",
+  
+  "definitions": {
+    "EvidenceKey": {
+      "type": "string",
+      "description": "Reference to evidence type"
+    },
+    
+    "Decision": {
+      "type": "string",
+      "enum": ["APPROVE", "NEEDS_REVIEW", "REJECT", "ABSTAIN"]
+    },
+    
+    "Counterfactual": {
+      "type": "object",
+      "properties": {
+        "originalDecision": { 
+          "$ref": "#/definitions/Decision",
+          "description": "The decision that was made"
+        },
+        "missing": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/EvidenceKey" },
+          "description": "All evidence that was missing"
+        },
+        "minimalToFlip": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/EvidenceKey" },
+          "description": "Smallest subset of missing evidence that would change decision"
+        },
+        "wouldDecide": {
+          "$ref": "#/definitions/Decision",
+          "description": "What decision would be if minimal evidence provided"
+        },
+        "rationale": {
+          "type": "string",
+          "description": "Human-readable explanation of the counterfactual"
+        },
+        "flipProbability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in flip prediction"
+        }
+      },
+      "required": ["originalDecision", "missing", "minimalToFlip", "wouldDecide", "rationale"]
+    },
+    
+    "FlipDistance": {
+      "type": "object",
+      "properties": {
+        "currentDecision": { "$ref": "#/definitions/Decision" },
+        "stepsToApprove": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of evidence items needed to reach APPROVE"
+        },
+        "stepsToReject": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of evidence items that would need removal to reach REJECT"
+        },
+        "criticalEvidence": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/EvidenceKey" },
+          "description": "Evidence with highest impact on decision"
+        }
+      },
+      "required": ["currentDecision", "stepsToApprove", "criticalEvidence"]
+    }
+  },
+  
+  "type": "object",
+  "properties": {
+    "sessionId": { 
+      "type": "string",
+      "description": "Unique identifier for the decision session"
+    },
+    "counterfactual": { "$ref": "#/definitions/Counterfactual" },
+    "flipDistance": { "$ref": "#/definitions/FlipDistance" }
+  },
+  
+  "examples": [
+    {
+      "sessionId": "session_1703875200_abc123",
+      "counterfactual": {
+        "originalDecision": "REJECT",
+        "missing": ["AUTHORITATIVE_PROCEDURE", "POLICY_DOCUMENT"],
+        "minimalToFlip": ["AUTHORITATIVE_PROCEDURE"],
+        "wouldDecide": "APPROVE",
+        "rationale": "Adding authoritative procedure would change decision from REJECT to APPROVE",
+        "flipProbability": 0.92
+      },
+      "flipDistance": {
+        "currentDecision": "REJECT",
+        "stepsToApprove": 1,
+        "stepsToReject": 0,
+        "criticalEvidence": ["AUTHORITATIVE_PROCEDURE"]
+      }
+    }
+  ]
+}

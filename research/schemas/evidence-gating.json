@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Evidence Gating Schema",
+  "description": "Schema for evidence-gated decision systems",
+  
+  "definitions": {
+    "EvidenceKey": {
+      "type": "string",
+      "enum": [
+        "SOURCE_A",
+        "SOURCE_B",
+        "AUTHORITATIVE_PROCEDURE",
+        "POLICY_DOCUMENT",
+        "EXTERNAL_VALIDATION",
+        "STRUCTURAL_ASSESSMENT",
+        "PRIMARY_DATA",
+        "SECONDARY_DATA"
+      ],
+      "description": "Types of evidence that can be required for a decision"
+    },
+    
+    "Decision": {
+      "type": "string",
+      "enum": ["APPROVE", "NEEDS_REVIEW", "REJECT", "ABSTAIN"],
+      "description": "Possible decision outcomes"
+    },
+    
+    "EvidenceItem": {
+      "type": "object",
+      "properties": {
+        "present": { "type": "boolean" },
+        "hash": { "type": "string", "description": "Content hash for provenance" },
+        "source": { "type": "string", "description": "Where evidence came from" },
+        "retrievedAt": { "type": "string", "format": "date-time" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "required": ["present"]
+    },
+    
+    "EvidenceBundle": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/definitions/EvidenceItem" },
+      "description": "Collection of evidence items keyed by EvidenceKey"
+    },
+    
+    "GatingPolicy": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "version": { "type": "string" },
+        "minCoverageToApprove": { 
+          "type": "number", 
+          "minimum": 0, 
+          "maximum": 1,
+          "description": "Minimum evidence coverage to approve"
+        },
+        "minCoverageToReview": { 
+          "type": "number", 
+          "minimum": 0, 
+          "maximum": 1,
+          "description": "Minimum coverage to allow human review"
+        },
+        "hardBlocks": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/EvidenceKey" },
+          "description": "Evidence that must be present or decision is REJECT"
+        },
+        "softBlocks": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/EvidenceKey" },
+          "description": "Evidence that must be present or decision is NEEDS_REVIEW"
+        },
+        "escalateOnContradiction": { 
+          "type": "boolean",
+          "description": "If conflicting evidence, escalate to human"
+        }
+      },
+      "required": ["id", "version", "minCoverageToApprove", "hardBlocks"]
+    },
+    
+    "GatingResult": {
+      "type": "object",
+      "properties": {
+        "coverage": { 
+          "type": "number", 
+          "minimum": 0, 
+          "maximum": 1,
+          "description": "Percentage of required evidence present"
+        },
+        "missing": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/EvidenceKey" },
+          "description": "Evidence keys that are missing"
+        },
+        "required": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/EvidenceKey" },
+          "description": "Evidence keys that were required"
+        },
+        "present": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/EvidenceKey" },
+          "description": "Evidence keys that are present"
+        },
+        "hardBlock": { 
+          "type": "boolean",
+          "description": "True if hard block triggered"
+        },
+        "escalate": { 
+          "type": "boolean",
+          "description": "True if escalation to human required"
+        },
+        "decision": { "$ref": "#/definitions/Decision" },
+        "notes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Human-readable explanation"
+        },
+        "policyVersion": { "type": "string" }
+      },
+      "required": ["coverage", "missing", "decision", "policyVersion"]
+    }
+  },
+  
+  "type": "object",
+  "properties": {
+    "context": {
+      "type": "object",
+      "description": "Domain-specific context for determining required evidence"
+    },
+    "evidence": { "$ref": "#/definitions/EvidenceBundle" },
+    "policy": { "$ref": "#/definitions/GatingPolicy" },
+    "result": { "$ref": "#/definitions/GatingResult" }
+  }
+}

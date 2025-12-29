@@ -1,0 +1,174 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Harm Signals Schema",
+  "description": "Schema for harm prediction features",
+  
+  "definitions": {
+    "HarmSignals": {
+      "type": "object",
+      "properties": {
+        "evidenceCoverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Percentage of required evidence present"
+        },
+        "contradictionDetected": {
+          "type": "boolean",
+          "description": "Whether conflicting evidence was found"
+        },
+        "staleEvidenceCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of outdated evidence items"
+        },
+        "lowConfidenceCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Evidence items with confidence < 0.7"
+        },
+        "irreversibleActionAttempted": {
+          "type": "boolean",
+          "description": "Whether system tried to finalize without gating"
+        },
+        "toolErrorCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of failed tool calls"
+        },
+        "policyVersionMismatch": {
+          "type": "boolean",
+          "description": "Whether outdated policy was used"
+        },
+        "modelConfidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Model-reported confidence (weak predictor)"
+        },
+        "evidenceGap": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of required - present evidence items"
+        },
+        "riskScore": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Computed harm risk score"
+        }
+      },
+      "required": [
+        "evidenceCoverage",
+        "contradictionDetected",
+        "modelConfidence",
+        "riskScore"
+      ]
+    },
+    
+    "HarmOutcome": {
+      "type": "object",
+      "properties": {
+        "occurred": { "type": "boolean" },
+        "type": {
+          "type": "string",
+          "enum": ["policy_violation", "safety_issue", "downstream_error", "audit_failure"]
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "critical"]
+        },
+        "description": { "type": "string" }
+      },
+      "required": ["occurred"]
+    },
+    
+    "UtilityModel": {
+      "type": "object",
+      "description": "Harm-weighted utility scoring",
+      "properties": {
+        "actCorrect": { 
+          "type": "number",
+          "default": 1,
+          "description": "Utility for correct action"
+        },
+        "actWrong": {
+          "type": "number",
+          "default": -10,
+          "description": "Utility for incorrect action (high penalty)"
+        },
+        "abstain": {
+          "type": "number",
+          "default": -1,
+          "description": "Utility for abstaining/escalating"
+        }
+      }
+    },
+    
+    "PredictorComparison": {
+      "type": "object",
+      "properties": {
+        "coverageAUC": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "AUC for evidence coverage as harm predictor"
+        },
+        "confidenceAUC": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "AUC for model confidence as harm predictor"
+        },
+        "riskScoreAUC": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "AUC for combined risk score"
+        },
+        "winner": {
+          "type": "string",
+          "enum": ["coverage", "confidence", "risk_score"],
+          "description": "Best predictor of harm"
+        }
+      },
+      "required": ["coverageAUC", "confidenceAUC", "winner"]
+    }
+  },
+  
+  "type": "object",
+  "properties": {
+    "signals": { "$ref": "#/definitions/HarmSignals" },
+    "outcome": { "$ref": "#/definitions/HarmOutcome" },
+    "utility": { "$ref": "#/definitions/UtilityModel" },
+    "prediction": { "$ref": "#/definitions/PredictorComparison" }
+  },
+  
+  "examples": [
+    {
+      "signals": {
+        "evidenceCoverage": 0.65,
+        "contradictionDetected": true,
+        "staleEvidenceCount": 1,
+        "lowConfidenceCount": 0,
+        "irreversibleActionAttempted": true,
+        "toolErrorCount": 0,
+        "policyVersionMismatch": false,
+        "modelConfidence": 0.89,
+        "evidenceGap": 3,
+        "riskScore": 0.72
+      },
+      "outcome": {
+        "occurred": true,
+        "type": "policy_violation",
+        "severity": "medium"
+      },
+      "prediction": {
+        "coverageAUC": 0.78,
+        "confidenceAUC": 0.52,
+        "riskScoreAUC": 0.84,
+        "winner": "risk_score"
+      }
+    }
+  ]
+}
