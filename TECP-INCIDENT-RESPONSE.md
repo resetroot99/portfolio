@@ -1,12 +1,10 @@
 # TEC-P Incident Response Specification
 
-**For skeptical reliability engineers.**
-
-No hype. Reproducible claims. Explicit gaps.
+A rigorous protocol specification with reproducible claims, explicit limitations, and verifiable evidence.
 
 ---
 
-## What TEC-P Is (2 Sentences)
+## Protocol Definition
 
 TEC-P is a cryptographic receipt format that creates tamper-evident records of what input was processed, what output was produced, and what policies were claimed during ephemeral computation.
 
@@ -116,7 +114,7 @@ console.log(Buffer.from(encode({a:1, b:2})).toString('hex'));
 |---|------------|---------|
 | 1 | Policy enforcement not proven | `policy_ids` are claims, not proofs |
 | 2 | Key management out of scope | No spec for rotation/destruction |
-| 3 | No RAM wipe proof | `sw-sim` = "we called delete" |
+| 3 | No RAM wipe proof | `sw-sim` indicates software-level deletion only |
 | 4 | Extensions are unsigned | Can be stripped without detection |
 | 5 | Single-point-of-time | No before/after guarantees |
 | 6 | No model correctness | Provenance only, not accuracy |
@@ -197,7 +195,7 @@ EVAL 6: Policy Registry
 
 ---
 
-## Honest Gaps (What We Cannot Prove)
+## Open Engineering Problems
 
 | Gap | Why | Proposed Test |
 |-----|-----|---------------|
@@ -285,7 +283,7 @@ return { data: response, tecp_receipt: receipt };
 
 ---
 
-## 3 Days Compute: What We'd Do Next
+## Proposed Next Steps (3-Day Sprint)
 
 | Day | Goal | Deliverable |
 |-----|------|-------------|
