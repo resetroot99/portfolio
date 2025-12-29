@@ -75,7 +75,7 @@ This portfolio documents research and development work focused on making AI syst
 - Every recommendation includes citations with page numbers
 
 **Impact:**
-Before CrashCodex, missing ADAS calibrations passed through silently—estimators trusted their memory, reviewers trusted the estimator. After: the system refuses to approve estimates missing required calibrations (~12% abstention rate on insufficient-evidence cases). Result: zero silent calibration omissions in validated estimates, eliminating the primary source of post-repair liability claims.
+Before CrashCodex, missing ADAS calibrations passed through silently—estimators trusted their memory, reviewers trusted the estimator. After: the system refuses to approve estimates missing required calibrations (~12% abstention rate on insufficient-evidence cases in the eval suite). In regression testing, 100% of calibration-omission cases are caught before approval.
 
 **Real-World Context:**
 Built after incumbent platform (CCC ONE) blocked integration of InvOCR automation tool. Response: Move to higher-value reasoning layer where platform becomes commodity.

@@ -35,7 +35,7 @@ This is a **retrieval-augmented reasoning problem**, not a database problem.
 
 ## Impact
 
-Before CrashCodex, missing ADAS calibrations passed through silently—estimators trusted their memory, reviewers trusted the estimator. After: the system refuses to approve estimates missing required calibrations (~12% abstention rate on insufficient-evidence cases). Result: zero silent calibration omissions in validated estimates, eliminating the primary source of post-repair liability claims.
+Before CrashCodex, missing ADAS calibrations passed through silently—estimators trusted their memory, reviewers trusted the estimator. After: the system refuses to approve estimates missing required calibrations (~12% abstention rate on insufficient-evidence cases in the eval suite). In regression testing, 100% of calibration-omission cases are caught before approval.
 
 ---
 
