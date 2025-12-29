@@ -142,6 +142,6 @@ Contributions welcome! See CONTRIBUTING.md
 
 ---
 
-**AI-LA: From idea to production in seconds.** 
+**AI-LA: From idea to production in seconds.**
 
-**No hype. Just working code. And lessons about autonomy.**
+Production-ready code with documented lessons on AI autonomy and accountability.

@@ -138,14 +138,12 @@ HARM PREDICTION:
 
 ## Verification Philosophy
 
-The code is the proof. Run the commands. Check the outputs.
-
 Claims are structured as:
 - **Measured:** deterministic, reproducible
 - **Estimated:** simulation-based, assumptions documented
 - **Not claimed:** things we haven't measured
 
-This separation is the difference between "cool story" and credible research.
+All claims can be verified by running the commands above.
 
 ---
 
