@@ -55,10 +55,24 @@ CrashCodex has two evaluation layers:
 
 | Metric | Current Value |
 |--------|---------------|
-| Scenario Eval Cases | 50+ scenarios |
+| Total Scenarios | 60 |
+| - Golden (manual) | 3 (hand-crafted with ground truth) |
+| - Generated | 47 (vehicle x damage matrix) |
+| - Adversarial | 10 (edge cases, robustness) |
 | Precision@5 | ~87% (internal search tests) |
 | End-to-End Latency | ~750ms -> ~180ms avg (retrieve -> reason/generate -> validate) |
 | Corpus Size | 28,556 embedded records (vectors) |
+
+**Adversarial cases test:**
+- Implicit ADAS requirements (not stated but damage implies it)
+- Conflicting DRP rules between carriers
+- Rare/unsupported vehicles (Rivian, classic cars)
+- Ambiguous damage descriptions (should abstain)
+- Hidden structural damage (displacement implies frame)
+- EV high-voltage safety requirements
+- Total loss threshold edge cases
+- Conflicting labor standards
+- Multiple ADAS systems affected
 
 **Definitions:**
 - **Precision@K**: percent of labeled queries where at least one relevant evidence chunk appears in the top K retrieved results.
@@ -118,8 +132,33 @@ npm run eval:scenarios
 ======================================================================
 
 Scenario Suite:     lib/ragEvaluationSystem.ts
-Total Scenarios:    50+
+Total Scenarios:    60
 Corpus Size:        28,556 embedded records (vectors)
+
+----------------------------------------------------------------------
+SCENARIO BREAKDOWN
+
+  | Type                    | Count | Description                    |
+  |-------------------------|-------|--------------------------------|
+  | Manual (golden)         | 3     | Hand-crafted with ground truth |
+  | Generated               | 47    | Vehicle x damage matrix        |
+  | Adversarial             | 10    | Edge cases and robustness      |
+  |-------------------------|-------|--------------------------------|
+  | TOTAL                   | 60    |                                |
+
+----------------------------------------------------------------------
+ADVERSARIAL CASES (robustness testing)
+
+  adversarial_adas_implicit        ADAS required but not stated
+  adversarial_drp_conflict         Conflicting insurer rules
+  adversarial_rare_vehicle         Limited data availability
+  adversarial_old_vehicle          Classic/vintage vehicle
+  adversarial_ambiguous_input      Vague damage description
+  adversarial_hidden_structural    Structural damage not explicit
+  adversarial_ev_safety            EV high voltage safety
+  adversarial_total_loss_edge      Total loss threshold
+  adversarial_labor_variance       Conflicting labor standards
+  adversarial_multi_system         Multiple ADAS affected
 
 ----------------------------------------------------------------------
 RETRIEVAL METRICS (from internal runs)
