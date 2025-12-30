@@ -85,7 +85,27 @@ Built after incumbent platform (CCC ONE) blocked integration of InvOCR automatio
 
 ---
 
-### 4. Red Team Toolkit
+### 4. Ali's Book of Fail
+
+**Problem:** Most AI evaluation tests answers instead of decisions. Systems fail silently, confidently, and plausibly—and standard evals miss it.
+
+**Solution:** Failure-first evaluation framework with executable test cases, failure taxonomy, and governance infrastructure.
+
+**Key Insight:** Evaluation must test for unjustified outputs, not just incorrect ones. A correct answer without evidence is indistinguishable from a lucky guess.
+
+**Technical Highlights:**
+- 172+ executable test cases across 9 suites
+- 60+ failure taxonomy labels (agentic, RAG, multimodal, core)
+- 24-chapter doctrine with implementation guidance
+- Hard gates that block deploys, not just log warnings
+- "No Trace, No Ship" as enforcement, not aspiration
+
+**Repository:** [github.com/resetroot99/Alis-book-of-fail](https://github.com/resetroot99/Alis-book-of-fail)  
+**Documentation:** [Alis-Book-of-Fail.md](Alis-Book-of-Fail.md)
+
+---
+
+### 5. Red Team Toolkit
 
 **Problem:** Building robust AI systems requires understanding how they fail under attack.
 
@@ -198,6 +218,9 @@ WordPress integration framework for AI-LA autonomous development system. Enables
 ### Explainable Reasoning
 **CrashCodex** and **EMSIQ** demonstrate that high-stakes AI must surface uncertainty and cite sources. "The AI said so" is not a defense in regulated environments.
 
+### Failure-First Evaluation
+**Ali's Book of Fail** formalizes that AI evaluation must test for unjustified outputs, not just incorrect ones. Fluent, confident, wrong answers are the dominant failure mode—and standard benchmarks miss them entirely.
+
 ### Autonomous Accountability
 **AI-LA** proves that accountability doesn't emerge naturally—it must be designed into autonomous systems from the start through decision logging, reasoning traces, and confidence scoring.
 
@@ -222,6 +245,7 @@ WordPress integration framework for AI-LA autonomous development system. Enables
 **Core Research:**
 - [tecp.dev](https://tecp.dev) - Cryptographic privacy protocol
 - [aiuinifiedframework.xyz](https://aiuinifiedframework.xyz/) - Autonomous AI framework
+- [Alis-book-of-fail](https://github.com/resetroot99/Alis-book-of-fail) - AI evaluation framework
 - [509938.xyz](https://509938.xyz) - Red Team security toolkit
 
 **Production Systems:**
@@ -256,6 +280,7 @@ This is a documentation-only repository. Implementation code is maintained in pr
 - [TECP.md](TECP.md) - Trusted Ephemeral Computation Protocol
 - [AI-LA.md](AI-LA.md) - AI Learning Agent & Autonomy Research
 - [CrashCodex.md](CrashCodex.md) - Collision Repair RAG System
+- [Alis-Book-of-Fail.md](Alis-Book-of-Fail.md) - Failure-First AI Evaluation Framework
 - [RedTeam.md](RedTeam.md) - Adversarial Systems Thinking
 
 **Production Systems:**
