@@ -1,3 +1,5 @@
+> Archived 29 Sep 2026. Hiring page: [repository README](../../README.md). This demo writeup was not re-verified for applications.
+
 # Red Team Toolkit (Public Demo)
 
 ## Purpose

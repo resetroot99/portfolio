@@ -1,3 +1,5 @@
+> Archived 29 Sep 2026. Hiring page: [repository README](../../README.md). Affiliations in this note were not re-verified for applications.
+
 # Adversarial Thinking → AI System Design
 
 ## Core Principles
