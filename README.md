@@ -20,7 +20,7 @@ Southern California · [ali@jakvan.io](mailto:ali@jakvan.io) · [GitHub](https:/
 End-to-end operational software. Public site: [sudosimian.com](https://sudosimian.com).
 
 **RocketPros** — Co-founder and CTO · 2026–present  
-Estimate analysis and parts workflow: application and API structure, subscription onboarding, ADAS and recommendation foundations, and release gates. Code is private.
+Estimate analysis and parts workflow: application and API structure, subscription onboarding, ADAS and recommendation foundations, and release gates. Public site: [rocketpros.app](https://www.rocketpros.app). Code is private.
 
 **Strat24** — Technology engineering and client systems · 2025–present  
 Device and activity portal on NinjaOne, tenant-scoped access, and executive security reports that separate verified telemetry from visibility gaps. Client environments. Code is private.
@@ -51,10 +51,10 @@ Vendor-agnostic evaluation harness and doctrine. Hard gates plus traces of what 
 
 | Product | What it is | Link |
 | --- | --- | --- |
+| RocketPros | Estimate analysis, RPS/DRP compliance, and ADAS calibration triggers for collision shops | [rocketpros.app](https://www.rocketpros.app) |
 | Aeonic | AI search visibility: citations across ChatGPT, Claude, Perplexity, and Gemini, with scoring and publishing paths | [aeonic.pro](https://www.aeonic.pro) |
 | CrashCodex | Collision-repair document intelligence. Retrieval over estimates and OEM/ADAS procedure context. Shop pilots. April 2026 corpus on the order of 7,000+ documents and 28,000+ vectors | [crashcodex.io](https://crashcodex.io) |
 | 24zero | Continuous cyber-risk and control-evidence product | [24zero.cloud](https://24zero.cloud) |
-| CrashDash | Profit-per-job analytics for collision shops | [crashman.xyz](https://www.crashman.xyz) |
 | InvOCR | Invoice intake for repair shops | [invocr.io](https://invocr.io) |
 | Sudo Simian | Practice site for this work | [sudosimian.com](https://sudosimian.com) |
 | Catalyst Tracker | Operational tracker described above | [portal.catalystresearch.xyz](https://portal.catalystresearch.xyz) |
