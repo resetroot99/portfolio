@@ -2,7 +2,7 @@
 
 Technical product and systems engineer. I build software people run in production: client portals, document intelligence, security reporting, and tools that catch AI output which only looks finished.
 
-Southern California · [ali@jakvan.io](mailto:ali@jakvan.io) · [GitHub](https://github.com/resetroot99) · [sudosimian.com](https://sudosimian.com)
+Southern California · [ali@jakvan.io](mailto:ali@jakvan.io) · [GitHub](https://github.com/resetroot99) · [LinkedIn](https://www.linkedin.com/in/ali-j-ab01b8357/) · [sudosimian.com](https://sudosimian.com)
 
 **Updated 29 Sep 2026.** This page is the hiring record. `archive/2025-12/` is the December 2025 working set. Use this page.
 
