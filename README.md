@@ -2,7 +2,7 @@
 
 Technical product and systems engineer. I build software people run in production: client portals, document intelligence, security reporting, and tools that catch AI output which only looks finished.
 
-Southern California · [ali@jakvan.io](mailto:ali@jakvan.io) · [GitHub](https://github.com/resetroot99) · [LinkedIn](https://www.linkedin.com/in/ali-jakvani) · [sudosimian.com](https://sudosimian.com)
+Southern California · [ali@jakvan.io](mailto:ali@jakvan.io) · [GitHub](https://github.com/resetroot99) · [sudosimian.com](https://sudosimian.com)
 
 **Updated 29 Sep 2026.** This page is the hiring record. `archive/2025-12/` is the December 2025 working set. Use this page.
 
@@ -53,7 +53,6 @@ Vendor-agnostic evaluation harness and doctrine. Hard gates plus traces of what 
 | --- | --- | --- |
 | Aeonic | AI search visibility: citations across ChatGPT, Claude, Perplexity, and Gemini, with scoring and publishing paths | [aeonic.pro](https://www.aeonic.pro) |
 | CrashCodex | Collision-repair document intelligence. Retrieval over estimates and OEM/ADAS procedure context. Shop pilots. April 2026 corpus on the order of 7,000+ documents and 28,000+ vectors | [crashcodex.io](https://crashcodex.io) |
-| TECP | Signed receipts for ephemeral processing | [tecp.dev](https://tecp.dev) |
 | 24zero | Continuous cyber-risk and control-evidence product | [24zero.cloud](https://24zero.cloud) |
 | CrashDash | Profit-per-job analytics for collision shops | [crashman.xyz](https://www.crashman.xyz) |
 | InvOCR | Invoice intake for repair shops | [invocr.io](https://invocr.io) |
@@ -80,4 +79,4 @@ TypeScript, JavaScript, Python, SQL. React, Next.js, Node, Fastify, FastAPI. Pos
 
 ## Archive
 
-`archive/2025-12/` holds the previous portfolio essays. Several of those pages name systems that were never given a public URL, and one listed live URL (`aiuinifiedframework.xyz`) no longer resolves. Hiring conversations should start here.
+`archive/2025-12/` holds the previous portfolio essays. Hiring conversations should start here.
